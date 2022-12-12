@@ -22,5 +22,8 @@
     "id":"ID",
     "unexpected_error": "Oops! An unexpected error occurred, please try again.",
     "invalid_username": "Invalid username",
-    "invalid_password": "Invalid password"
+    "invalid_email": "Invalid email, your email should be like email@gmail.com",
+    "invalid_password": "Your password must contain \t - At least one number \t- At least one letter \t- 8 characters",
+    "success_create_account": "Account created successfully!",
+    "password_dont_match": "Passwords do not match"
 }

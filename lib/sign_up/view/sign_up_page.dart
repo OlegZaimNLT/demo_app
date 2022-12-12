@@ -1,34 +1,30 @@
 import 'package:authentication/authentication.dart';
+import 'package:demo_app/app/app.dart';
 import 'package:demo_app/l10n/l10n.dart';
-import 'package:demo_app/sign_in/sign_in.dart';
-import 'package:demo_app/sign_up/sign_up.dart';
-import 'package:demo_app/theme/app_theme.dart';
+import 'package:demo_app/shared/widgets/sign_in_options.dart';
+import 'package:demo_app/sign_up/cubit/sign_up_cubit.dart';
+import 'package:demo_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:formz/formz.dart';
 
-import '../../shared/widgets/sign_in_options.dart';
-import '../../theme/app_colors.dart';
-import '../../theme/app_text_style.dart';
+part 'sign_up_form.dart';
 
-part 'sign_in_form.dart';
-
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
-
-  static Page<void> page() => const MaterialPage<void>(child: SignInPage());
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   static Route<void> route() {
-    return MaterialPageRoute<void>(builder: (_) => const SignInPage());
+    return MaterialPageRoute<void>(builder: (_) => const SignUpPage());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleTextStyle: Theme.of(context).textTheme.headline1,
         title: Text(
-          AppLocalizations.of(context).sign_in,
+          AppLocalizations.of(context).sign_up,
         ),
       ),
       body: CustomScrollView(
@@ -40,20 +36,10 @@ class SignInPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/image/sign_in_image.png',
-                    height: 150,
-                  ),
-                  //todo check what the problem with that svg image
-                  // SvgPicture.asset(
-                  //   'assets/image/sign_in_image.svg',
-                  //   height: 200,
-                  // ),
-                  const SizedBox(height: 64),
-                  BlocProvider(
+                  BlocProvider<SignUpCubit>(
                     create: (_) =>
-                        SignInCubit(context.read<AuthenticationRepository>()),
-                    child: const SignInForm(),
+                        SignUpCubit(context.read<AuthenticationRepository>()),
+                    child: const SignUpForm(),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -70,37 +56,33 @@ class SignInPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        AppLocalizations.of(context).dont_have_an_account,
+                        AppLocalizations.of(context).already_have_an_account,
                         style: AppTextStyle.caption.copyWith(
                           color: AppColors.silver.shade500,
                         ),
                       ),
-                      _SignUpButton(),
+                      _SignInButton(),
                     ],
                   ),
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
   }
 }
 
-class _SignUpButton extends StatelessWidget {
+class _SignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: TextButton(
-        key: const Key('signInForm_createAccount_flatButton'),
-        onPressed: () {
-          Navigator.of(context).push<void>(SignUpPage.route());
-        },
-        child: Text(
-          AppLocalizations.of(context).sign_up,
-          style: AppTextStyle.textButtonUnderlined,
-        ),
+    return TextButton(
+      key: const Key('signUpForm_goToSignIn_flatButton'),
+      onPressed: () => Navigator.of(context).pop(),
+      child: Text(
+        AppLocalizations.of(context).sign_in,
+        style: AppTextStyle.textButtonUnderlined,
       ),
     );
   }

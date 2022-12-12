@@ -13,18 +13,14 @@ class FirestoreProvider {
 
   Future<void> createUser(User user) async {
     return _users.doc(user.id).set({
-      'name': user.name,
       'mail': user.mail,
-      'username': user.username,
-      'birthdate': user.birthdate?.microsecondsSinceEpoch,
-      'genre': user.genre,
     });
   }
 
   Future<bool> verifyIfUsernameExists(String username) async {
     final coincidences = await _users
         .where(
-          'username',
+          'mail',
           isEqualTo: username,
         )
         .get();
@@ -38,11 +34,7 @@ class FirestoreProvider {
     final data = doc.data() as Map<String, dynamic>?;
     return User(
       id: doc.id,
-      name: data?['name'] as String,
       mail: data?['mail'] as String,
-      username: data?['username'] as String,
-      genre: data?['genre'] as String,
-      birthdate: DateTime.fromMicrosecondsSinceEpoch(data?['birthdate'] as int),
     );
   }
 }

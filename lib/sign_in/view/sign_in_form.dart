@@ -24,7 +24,7 @@ class SignInForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _EmailInput(),
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           _PasswordInput(),
           const SizedBox(height: 4),
           Align(

@@ -1,3 +1,4 @@
+import 'package:authentication/authentication.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,7 +43,7 @@ class SignInCubit extends Cubit<SignInState> {
         password: state.password.value,
       );
       emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on FirebaseAuthException catch (e) {
+    } on LogInWithEmailAndPasswordFailure catch (e) {
       print(e.message);
       emit(
         state.copyWith(
