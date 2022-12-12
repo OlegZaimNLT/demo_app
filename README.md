@@ -21,7 +21,7 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Demo App works on iOS, Android, Web, and Windows._
+_\*Demo App works on iOS, Android, Web
 
 ---
 
