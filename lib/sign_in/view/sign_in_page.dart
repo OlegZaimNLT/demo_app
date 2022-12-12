@@ -60,7 +60,7 @@ class SignInPage extends StatelessWidget {
                     child: Text(
                       AppLocalizations.of(context).or,
                       style: AppTextStyle.subtitle2
-                          .copyWith(color: AppColors.silver.shade500),
+                          .copyWith(color: AppColors.silver),
                     ),
                   ),
                   SignInOptionButtons(),
@@ -72,7 +72,7 @@ class SignInPage extends StatelessWidget {
                       Text(
                         AppLocalizations.of(context).dont_have_an_account,
                         style: AppTextStyle.caption.copyWith(
-                          color: AppColors.silver.shade500,
+                          color: AppColors.silver,
                         ),
                       ),
                       _SignUpButton(),

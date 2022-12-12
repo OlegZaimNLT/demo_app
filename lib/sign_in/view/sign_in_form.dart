@@ -37,7 +37,7 @@ class SignInForm extends StatelessWidget {
               child: Text(
                 AppLocalizations.of(context).forgot_password,
                 style: AppTextStyle.subtitle2.copyWith(
-                  color: AppColors.silver.shade500,
+                  color: AppColors.silver,
                 ),
               ),
             ),

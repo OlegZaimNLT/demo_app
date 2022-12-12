@@ -6,13 +6,20 @@ import 'app_colors.dart';
 abstract class AppTextStyle {
   static TextStyle get headline1 {
     return _headerTextStyle.copyWith(
+      fontSize: 24,
+      fontWeight: AppFontWeight.medium,
+    );
+  }
+
+  static TextStyle get headline2 {
+    return _headerTextStyle.copyWith(
       fontSize: 18,
       letterSpacing: 0.38,
       fontWeight: AppFontWeight.medium,
     );
   }
 
-  static TextStyle get headline2 {
+  static TextStyle get headline3 {
     return _headerTextStyle.copyWith(
       fontSize: 16,
       fontWeight: AppFontWeight.medium,

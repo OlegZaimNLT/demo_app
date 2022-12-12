@@ -39,6 +39,8 @@ flutter:
     - assets/image/sign_up_image.svg
     - assets/image/sign_up_image.png
     - assets/image/sign_in_image.png
+    - assets/image/avatar_image.png
     - assets/icons/facebook.svg
     - assets/icons/twitter.svg
     - assets/icons/linkedin.svg
+    - assets/icons/menu.svg

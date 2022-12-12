@@ -1,4 +1,5 @@
 import 'package:authentication/authentication.dart';
+import 'package:demo_app/profile/profile.dart';
 import 'package:demo_app/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,10 +46,9 @@ class AppView extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: BlocBuilder<AppBloc, AppState>(
         builder: (context, state) {
-          return const SignInPage();
-          // return state.status == AppStatus.authenticated
-          //     ? const ProfilePage()
-          //     : const SignInPage();
+          return state.status == AppStatus.authenticated
+              ? const ProfilePage()
+              : const SignInPage();
         },
       ),
     );

@@ -8,8 +8,8 @@ class AppTheme {
   /// Dark text on light surface
   static TextTheme get lightTextTheme {
     return TextTheme(
-      headline1: AppTextStyle.headline1,
-      headline2: AppTextStyle.headline2,
+      headline1: AppTextStyle.headline2,
+      headline2: AppTextStyle.headline3,
       subtitle1: AppTextStyle.subtitle1,
       subtitle2: AppTextStyle.subtitle2,
       bodyText1: AppTextStyle.body,
@@ -47,7 +47,7 @@ class AppTheme {
           color: AppColors.grey.shade300,
         ),
         titleTextStyle:
-            AppTextStyle.headline1.copyWith(color: AppColors.silver.shade900),
+            AppTextStyle.headline2.copyWith(color: AppColors.silver.shade900),
         toolbarTextStyle: lightTextTheme.headline2,
       ),
 
@@ -95,7 +95,7 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         fillColor: AppColors.grey.shade50,
         filled: true,
-        floatingLabelStyle: AppTextStyle.headline2.copyWith(
+        floatingLabelStyle: AppTextStyle.headline3.copyWith(
           color: AppColors.silver.shade300,
         ),
         labelStyle: AppTextStyle.subtitle2.copyWith(
@@ -132,7 +132,19 @@ class AppTheme {
     );
   }
 
-  static ButtonStyle get secondaryButton {
+  static ButtonStyle get outlinedPrimaryButton {
+    return ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(AppColors.green),
+      foregroundColor: MaterialStateProperty.all(AppColors.white),
+      overlayColor: MaterialStateProperty.all(AppColors.green),
+      elevation: MaterialStateProperty.all(0),
+      padding: MaterialStateProperty.all(
+        const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      ),
+    );
+  }
+
+  static ButtonStyle get outlinedSecondaryButton {
     return ButtonStyle(
       backgroundColor: MaterialStateProperty.all(AppColors.white),
       foregroundColor: MaterialStateProperty.all(AppColors.green.shade700),

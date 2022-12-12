@@ -17,7 +17,7 @@ class SignInOptionButtons extends StatelessWidget {
               key: const Key('signInForm_facebook_textButton'),
               onPressed: () {
               },
-              style: AppTheme.secondaryButton,
+              style: AppTheme.outlinedSecondaryButton,
               child: SvgPicture.asset(
                 'assets/icons/facebook.svg',
                 height: 15,
@@ -32,7 +32,7 @@ class SignInOptionButtons extends StatelessWidget {
               key: const Key('signInForm_twitter_textButton'),
               onPressed: () {
               },
-              style: AppTheme.secondaryButton,
+              style: AppTheme.outlinedSecondaryButton,
               child: SvgPicture.asset(
                 'assets/icons/twitter.svg',
                 height: 15,
@@ -47,7 +47,7 @@ class SignInOptionButtons extends StatelessWidget {
               key: const Key('signInForm_linkedin_textButton'),
               onPressed: () {
               },
-              style: AppTheme.secondaryButton,
+              style: AppTheme.outlinedSecondaryButton,
               child: SvgPicture.asset(
                 'assets/icons/linkedin.svg',
                 height: 15,
