@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "122240497817",
+    "project_id": "fir-app-e6acc",
+    "storage_bucket": "fir-app-e6acc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122240497817:android:17f137a51fd89ca2886008",
+        "android_client_info": {
+          "package_name": "com.newlinetechnologies.demo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122240497817-avpgm097l1tjfvlp7aalt5p46h04hsub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArHlVxN0FVcyjCPlIiL9We-S1Jv3_m6gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122240497817-avpgm097l1tjfvlp7aalt5p46h04hsub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
